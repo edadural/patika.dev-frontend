@@ -1,38 +1,29 @@
+/* html ve body etiketlerinin tam yüksekliği kaplamasını sağlıyoruz */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
+  /* Flexbox kullan */
   flex-direction: column;
-  align-items: center;
+  /* Öğeleri dikeyde sırala */
+  min-height: 100vh;
+  /* Ekran yüksekliğinin tamamını kapla */
+}
+
+/* Ana içerik alanı - bu kısım esneyerek footer'ı aşağı itecek */
+.main-content {
+  flex-grow: 1;
+  /* Mevcut boş alanı doldurarak esne */
+  display: flex;
+  /* Counter bileşenini de ortalamak için flexbox kullanabiliriz */
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  /* Yatayda ortala */
+  align-items: center;
+  /* Dikeyde ortala (isteğe bağlı, Counter zaten kendini ortalıyor) */
+  /* Counter'ın margin-top'ını kaldırırsanız daha iyi olur */
 }
