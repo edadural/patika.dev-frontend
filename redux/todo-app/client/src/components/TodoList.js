@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import {
-  selectFilteredTodos,
   getTodoAsync,
   toggleTodoAsync,
   removeTodoAsync,
-} from "../redux/todos/todosSlice";
+} from "../redux/todos/services";
+import { selectFilteredTodos } from "../redux/todos/todosSlice";
 import { useEffect } from "react";
 import Loading from "./Loading";
 import Error from "./Error";
