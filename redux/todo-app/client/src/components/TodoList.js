@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import {
-  toggle,
-  destroy,
   selectFilteredTodos,
   getTodoAsync,
+  toggleTodoAsync,
+  removeTodoAsync,
 } from "../redux/todos/todosSlice";
 import { useEffect } from "react";
 import Loading from "./Loading";
@@ -20,10 +20,14 @@ function TodoList() {
     dispatch(getTodoAsync());
   }, [dispatch]);
 
-  const handleDestroy = (id) => {
+  const handleDestroy = async (id) => {
     if (window.confirm("Are you sure?")) {
-      dispatch(destroy(id));
+      await dispatch(removeTodoAsync(id));
     }
+  };
+
+  const handleToggle = async (id, completed) => {
+    await dispatch(toggleTodoAsync({ id, data: { completed } }));
   };
 
   if (isLoading) {
@@ -43,7 +47,7 @@ function TodoList() {
               className="toggle"
               type="checkbox"
               checked={item.completed}
-              onChange={() => dispatch(toggle({ id: item.id }))}
+              onChange={() => handleToggle(item.id, !item.completed)}
             />
             <label>{item.title}</label>
             <button
