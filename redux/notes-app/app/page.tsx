@@ -2,6 +2,7 @@
 import Card from "@/components/card";
 import { Button } from "@heroui/button";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 export default function Home() {
   const colors = [
@@ -12,26 +13,7 @@ export default function Home() {
     "primary",
     "info",
   ];
-  const notes = [
-    {
-      id: 1,
-      title: "Note 1",
-      description: "Description 1",
-      color: "secondary",
-    },
-    {
-      id: 2,
-      title: "Note 2",
-      description: "Description 2",
-      color: "warning",
-    },
-    {
-      id: 3,
-      title: "Note 3",
-      description: "Description 3",
-      color: "success",
-    },
-  ];
+  const notes = useSelector((state: any) => state.notes.items);
   const [selectedColor, setSelectedColor] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -56,11 +38,11 @@ export default function Home() {
             ></div>
           ))}
         </div>
-        <Button variant="bordered">Add</Button>
+        <Button color="primary">Add</Button>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        {notes.map((note) => (
+        {notes.map((note: any) => (
           <Card
             key={note.id}
             title={note.title}
