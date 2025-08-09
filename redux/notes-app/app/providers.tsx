@@ -17,7 +17,7 @@ export function Providers({ children, themeProps }: ProvidersProps) {
 
   return (
     <HeroUIProvider navigate={router.push}>
-      <NextThemesProvider {...themeProps}>
+      <NextThemesProvider defaultTheme="light" {...themeProps}>
         <ReduxProvider store={store}>{children}</ReduxProvider>
       </NextThemesProvider>
     </HeroUIProvider>
