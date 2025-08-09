@@ -4,6 +4,7 @@ import { Button } from "@heroui/button";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addNote } from "@/redux/notes/notesSlice";
+import Search from "@/components/search";
 
 const colorClass: Record<string, string> = {
   secondary: "bg-purple-300",
@@ -28,6 +29,7 @@ export default function Home() {
   const [selectedColor, setSelectedColor] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [search, setSearch] = useState("");
 
   const noteAdd = () => {
     if (!title.trim() || !description.trim())
@@ -45,8 +47,13 @@ export default function Home() {
     setSelectedColor("");
   };
 
+  const filteredNotes = notes.filter((note: any) =>
+    note.title.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <section className="flex flex-col items-center justify-center gap-4 pb-8 md:pb-10">
+      <Search search={search} setSearch={setSearch} />
       <Card
         title={title}
         description={description}
@@ -73,7 +80,7 @@ export default function Home() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full">
-        {notes.map((note: any) => (
+        {filteredNotes.map((note: any) => (
           <Card
             key={note.id}
             title={note.title}
