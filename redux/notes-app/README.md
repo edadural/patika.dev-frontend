@@ -1,53 +1,53 @@
-# Next.js & HeroUI Template
+# Notes App
 
-This is a template for creating applications using Next.js 14 (app directory) and HeroUI (v2).
+Modern, minimalist bir **Notlar Uygulaması**. Başlık ve açıklama girerek not oluşturabilir, not rengini seçebilir, arama kutusuyla filtreleyebilir ve liste halinde görüntüleyebilirsiniz. Temaya duyarlı tasarım (light/dark) ve temiz bir UI ile gelir.
 
-[Try it on CodeSandbox](https://githubbox.com/heroui-inc/heroui/next-app-template)
+Uygulamanın canlı sürümüne aşağıdaki bağlantıdan ulaşabilirsiniz:
 
-## Technologies Used
+https://edadural-notes-app.vercel.app/
 
-- [Next.js 14](https://nextjs.org/docs/getting-started)
-- [HeroUI v2](https://heroui.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
+![image](https://github.com/edadural/patika.dev-frontend/blob/main/redux/notes-app/public/1.png)
+![image](https://github.com/edadural/patika.dev-frontend/blob/main/redux/notes-app/public/2.png)
 
-## How to Use
+---
 
-### Use the template with create-next-app
+## ✨ Özellikler
 
-To create a new project based on this template using `create-next-app`, run the following command:
+- 🔍 **Arama**: Notları başlık ve açıklamaya göre anlık filtreleme
+- 🎨 **Renk etiketleri**: Not oluştururken renk seçimi
+- ➕ **Not ekleme**: Başlık + açıklama alanlarıyla hızlı ekleme
+- ♻️ **Temiz UI**: Minimal kart tasarımları, yumuşak gölgeler
+- 🌓 **Karanlık mod** desteği
+- 🔎 **Responsive** tasarım
+
+## 🛠️ Teknolojiler
+
+- **React / Next.js** (App Router)
+- **Tailwind CSS**
+- **HeroUI** bileşenleri
+- TypeScript
+
+## 🚀 Başlarken
+
+### 1) Gerekli araçlar
+
+- Node.js 18+
+- npm / pnpm / yarn (örnekler `npm` ile verilmiştir)
+
+### 2) Kurulum
+
+Depoyu klonlayın
 
 ```bash
-npx create-next-app -e https://github.com/heroui-inc/next-app-template
+git clone https://github.com/edadural/patika.dev-frontend/tree/main/redux/notes-app
+cd notes-app
 ```
 
-### Install dependencies
-
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
+Projeyi başlatın
 
 ```bash
 npm install
-```
-
-### Run the development server
-
-```bash
 npm run dev
 ```
 
-### Setup pnpm (optional)
-
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
-
-```bash
-public-hoist-pattern[]=*@heroui/*
-```
-
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
-
-## License
-
-Licensed under the [MIT license](https://github.com/heroui-inc/next-app-template/blob/main/LICENSE).
+Tarayıcınızda [http://localhost:3000](http://localhost:3000) adresine giderek uygulamayı görebilirsiniz.
