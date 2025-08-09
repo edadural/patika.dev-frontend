@@ -20,6 +20,7 @@ const notesSlice = createSlice({
   },
   reducers: {
     getNotes: (state) => state,
+    // add note
     addNote: (state, action) => {
       state.items.push(action.payload);
     },
@@ -28,4 +29,6 @@ const notesSlice = createSlice({
     },
   },
 });
+
+export const { getNotes, addNote } = notesSlice.actions;
 export default notesSlice.reducer;
