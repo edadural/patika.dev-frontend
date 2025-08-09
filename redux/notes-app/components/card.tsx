@@ -29,8 +29,8 @@ export default function Card({
 }: CardProps) {
   return (
     <div
-      className={`w-full p-4 rounded-2xl shadow border border-gray-200 ${
-        color ? (colorClass[color] ?? "bg-gray-100") : "bg-gray-100"
+      className={`w-full p-4 rounded-2xl shadow-md  ${
+        color ? (colorClass[color] ?? "bg-default-300") : "bg-default-300"
       }`}
     >
       <div className="flex flex-col gap-3">

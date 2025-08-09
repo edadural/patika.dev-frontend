@@ -50,7 +50,7 @@ export default function RootLayout({
               {children}
             </main>
 
-            <footer className="w-full flex flex-col gap-2 items-center justify-center py-5 bg-black/90">
+            <footer className="w-full flex flex-col gap-2 items-center justify-center py-5 bg-gray-800">
               <Link
                 isExternal
                 aria-label="Github"

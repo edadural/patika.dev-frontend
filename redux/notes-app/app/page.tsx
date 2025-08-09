@@ -69,7 +69,7 @@ export default function Home() {
             <div
               key={color}
               onClick={() => setSelectedColor(color)}
-              className={`w-8 h-8 rounded-full cursor-pointer border-2 border-gray-100 hover:scale-110 transition ${colorClass[color]}`}
+              className={`w-8 h-8 rounded-full cursor-pointer hover:scale-110 transition ${colorClass[color]}`}
               title={color}
             />
           ))}
